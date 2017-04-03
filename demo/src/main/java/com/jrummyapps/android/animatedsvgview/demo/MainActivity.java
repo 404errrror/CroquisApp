@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
       @Override public void run() {
         svgView.start();
       }
-    }, 5000);
+    }, 500);
 
     svgView.setOnClickListener(new View.OnClickListener() {
 

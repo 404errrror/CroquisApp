@@ -16,12 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         svgView = (AnimatedSvgView) findViewById(R.id.animated_sgv_view);
         setSvg(SVG.GOOGLE);
-        svgView.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                svgView.start();
-            }
-        }, 500);
+
+        svgView.start();
 
         svgView.setOnStateChangeListener(new AnimatedSvgView.OnStateChangeListener() {
             @Override public void onStateChange(@AnimatedSvgView.State int state)

@@ -69,6 +69,7 @@ public class AnimatedSvgView extends View {
   private int mTraceTimePerGlyph = 1000;
   private int mFillStart = 1200;
   private int mFillTime = 1000;
+  private int mDisappearTime = 1000;
   private int[] mTraceResidueColors;
   private int[] mTraceColors;
   private float mViewportWidth;
@@ -207,22 +208,24 @@ public class AnimatedSvgView extends View {
     long t = System.currentTimeMillis() - mStartTime;
 
     // Draw outlines (starts as traced)
-    for (int i = 0; i < mGlyphData.length; i++) {
-      float phase = constrain(0, 1,
-          (t - (mTraceTime - mTraceTimePerGlyph) * i * 1f / mGlyphData.length) * 1f / mTraceTimePerGlyph);
-      float distance = INTERPOLATOR.getInterpolation(phase) * mGlyphData[i].length;
-      mGlyphData[i].paint.setColor(mTraceResidueColors[i]);
-      mGlyphData[i].paint.setPathEffect(new DashPathEffect(
-          new float[]{distance, mGlyphData[i].length}, 0));
-      canvas.drawPath(mGlyphData[i].path, mGlyphData[i].paint);
+    if(t < mFillStart + mFillTime) {
+      for (int i = 0; i < mGlyphData.length; i++) {
+        float phase = constrain(0, 1,
+                (t - (mTraceTime - mTraceTimePerGlyph) * i * 1f / mGlyphData.length) * 1f / mTraceTimePerGlyph);
+        float distance = INTERPOLATOR.getInterpolation(phase) * mGlyphData[i].length;
+        mGlyphData[i].paint.setColor(mTraceResidueColors[i]);
+        mGlyphData[i].paint.setPathEffect(new DashPathEffect(
+                new float[]{distance, mGlyphData[i].length}, 0));
+        canvas.drawPath(mGlyphData[i].path, mGlyphData[i].paint);
 
-      mGlyphData[i].paint.setColor(mTraceColors[i]);
-      mGlyphData[i].paint.setPathEffect(new DashPathEffect(
-          new float[]{0, distance, phase > 0 ? mMarkerLength : 0, mGlyphData[i].length}, 0));
-      canvas.drawPath(mGlyphData[i].path, mGlyphData[i].paint);
+        mGlyphData[i].paint.setColor(mTraceColors[i]);
+        mGlyphData[i].paint.setPathEffect(new DashPathEffect(
+                new float[]{0, distance, phase > 0 ? mMarkerLength : 0, mGlyphData[i].length}, 0));
+        canvas.drawPath(mGlyphData[i].path, mGlyphData[i].paint);
+      }
     }
 
-    if (t > mFillStart) {
+    if (t > mFillStart && t < mFillStart + mFillTime) {
       if (mState < STATE_FILL_STARTED) {
         changeState(STATE_FILL_STARTED);
       }
@@ -237,11 +240,39 @@ public class AnimatedSvgView extends View {
         int g = Color.green(fillColor);
         int b = Color.blue(fillColor);
         mFillPaint.setARGB(a, r, g, b);
+
         canvas.drawPath(glyphData.path, mFillPaint);
       }
     }
 
-    if (t < mFillStart + mFillTime) {
+    if(t > mFillStart + mFillTime)
+    {
+      float phase = (t - mDisappearTime - mFillStart) * 1f / mFillTime;
+      if(phase < 0)
+        phase = 0;
+      else if(phase > 1)
+        phase = 1;
+
+      for(int i = 0; i < mGlyphData.length; i++)
+      {        GlyphData glyphData = mGlyphData[i];
+        int fillColor = mFillColors[i];
+        int a =  255 - (int) (phase * ((float) Color.alpha(fillColor) / (float) 255) * 255);
+        int r = Color.red(fillColor);
+        int g = Color.green(fillColor);
+        int b = Color.blue(fillColor);
+        mFillPaint.setARGB(a, r, g, b);
+        canvas.drawPath(glyphData.path, mFillPaint);
+
+
+        mGlyphData[i].paint.setAlpha(a);
+        canvas.drawPath(mGlyphData[i].path, mGlyphData[i].paint);
+
+      }
+
+    }
+
+
+    if (t < mFillStart + mDisappearTime + mFillTime ) {
       // draw next frame if animation isn't finished
       ViewCompat.postInvalidateOnAnimation(this);
     } else {
