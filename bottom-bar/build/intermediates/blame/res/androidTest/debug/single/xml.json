@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\dummy_tabs_five.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar\\src\\androidTest\\res\\xml\\dummy_tabs_five.xml"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\dummy_tabs_three.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar\\src\\androidTest\\res\\xml\\dummy_tabs_three.xml"
+    }
+]

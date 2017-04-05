@@ -28,6 +28,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 
-    compile project(':library')
+    compile project(':svg_library')
 
+    compile project(path: ':bottom-bar')
+}
+repositories {
 }

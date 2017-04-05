@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_favorites.png",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\drawable-xhdpi\\ic_favorites.png"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_nearby.png",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\drawable-xhdpi\\ic_nearby.png"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_restaurants.png",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\drawable-xhdpi\\ic_restaurants.png"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_recents.png",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\drawable-xhdpi\\ic_recents.png"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_friends.png",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\drawable-xhdpi\\ic_friends.png"
+    }
+]

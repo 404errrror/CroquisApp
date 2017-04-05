@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\xml\\bottombar_tabs_color_changing.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\xml\\bottombar_tabs_color_changing.xml"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\xml\\bottombar_tabs_five.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\xml\\bottombar_tabs_five.xml"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\xml\\bottombar_tabs_three.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\xml\\bottombar_tabs_three.xml"
+    }
+]

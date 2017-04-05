@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_three_tabs.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\layout-sw600dp\\activity_three_tabs.xml"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\activity_color_changing_tabs.xml",
+        "source": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\src\\main\\res\\layout-sw600dp\\activity_color_changing_tabs.xml"
+    },
+    {
+        "merged": "D:\\ta\\AndroidStudio_Projects\\CroquisApp\\bottom-bar_demo\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\CH\\.android\\build-cache\\1765718de76c76108f81686fb218ccc8e527efd0\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    }
+]

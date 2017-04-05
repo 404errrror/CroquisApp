@@ -1,45 +1,40 @@
 package com.example.momo.myapplication;
 
+import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.jrummyapps.android.widget.AnimatedSvgView;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabReselectListener;
+import com.roughike.bottombar.OnTabSelectListener;
 
 
 public class MainActivity extends AppCompatActivity {
-    AnimatedSvgView svgView;
+    private TextView messageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_layout);
 
-        svgView = (AnimatedSvgView) findViewById(R.id.animated_sgv_view);
-        setSvg(SVG.GOOGLE);
+        messageView = (TextView) findViewById(R.id.messageView);
 
-        svgView.start();
-
-        svgView.setOnStateChangeListener(new AnimatedSvgView.OnStateChangeListener() {
-            @Override public void onStateChange(@AnimatedSvgView.State int state)
-            {
-                if(state == AnimatedSvgView.STATE_FINISHED)
-                    setContentView(R.layout.select_layout);
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(@IdRes int tabId) {
+             //   messageView.setText(TabMessage.get(tabId, false));
             }
         });
 
+        bottomBar.setOnTabReselectListener(new OnTabReselectListener() {
+            @Override
+            public void onTabReSelected(@IdRes int tabId) {
+              //  Toast.makeText(getApplicationContext(), TabMessage.get(tabId, true), Toast.LENGTH_LONG).show();
+            }
+        });
 
-    }
-
-
-
-
-    private void setSvg(SVG svg) {
-        svgView.setGlyphStrings(svg.glyphs);
-        svgView.setFillColors(svg.colors);
-        svgView.setViewportSize(svg.width, svg.height);
-        svgView.setTraceResidueColor(0x32000000);
-        svgView.setTraceColors(svg.colors);
-        svgView.rebuildGlyphData();
-        svgView.start();
     }
 }
